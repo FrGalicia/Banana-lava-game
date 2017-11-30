@@ -1,14 +1,17 @@
 var mainState = {
     preload: function(){
-        game.load.image('player','assets/player.png');
-        game.load.image('wall','assets/wall.png');
+        game.load.image('player','assets/Soldier.png');
+        game.load.image('wall','assets/Wall.png');
         game.load.image('coin','assets/coin.png');
-        game.load.image('enemy','assets/enemy.png');
+        game.load.image('enemy','assets/lava.png');
+        
     },
     
     create: function(){
+        
+        game.world.setBounds(0,0, 5000,10000);
         //change the game's background color 
-        game.stage.backgroundColor = "#FEB5B5";
+        game.stage.backgroundColor = "#CB4335";
         //start physics system for movements and collisions
         game.physics.startSystem(Phaser.Physics.ARCADE);
         //add hte physics engine to all the game objects
@@ -25,6 +28,7 @@ var mainState = {
         this.coins = game.add.group();
         this.enemies = game.add.group();
         
+        game.camera.follow(this.player);
         
 //Game settings/player setup
 
@@ -55,9 +59,9 @@ var level = [
 'x                                                                                                               x',
 'x                                                                                                               x',
 'x                                                                                                               x', 'x                                                                                                               x', 
-'x                                                                                                               x', 'x                                                                                                               x', 'x                                                                                                               x', 
-'x                                                                                                               x', 'x                                                                                                               x', 
-'xxxxxxxxxxxxxxxxxxx!!!!!xxxx!!!!!xxxxxxxxxxxxx!!!!!!!!xxxxxxxxxxxxxxxxxx!!!!!!!!!!!!!!!!!!!!!!xxxxxxxxxxxxxxxxxxx',
+'x         o                                                                                                     x', 'x                                                                                                               x', 'x                                                                                ooo                            x', 
+'x         !                        !   o   !                                  xxxxxxxxx                         x', 'x                       ooo                                                                                     x', 
+'xxxxxxxxxxxxxxxxxxx!!!!xxxxx!!!xxxxxxxxxxxxxxxxxxx!!!!!!!xxxxxxxxxxxxxxxxxx!!!!!!!!!!!!!!!!!!!xxxxxxxxxxxxxxxxxxx',
 'x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x',
 'x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x',
 'x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x',
@@ -87,6 +91,7 @@ this.coins.add(coin);
 var enemy = game.add.sprite(30+20*j, 30+20*i, 'enemy');
 this.enemies.add(enemy);
       }
+ 
    }
 }
     },
@@ -120,6 +125,6 @@ this.enemies.add(enemy);
     }
 };
 
-var game = new Phaser.Game(1500,1000);
+var game = new Phaser.Game(2320,1000);
 game.state.add('main', mainState);
 game.state.start('main');
