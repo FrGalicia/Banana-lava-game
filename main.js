@@ -8,7 +8,7 @@ var mainState = {
     
     create: function(){
         //change the game's background color 
-        game.state.backgroundColor = '#3598db';
+        game.stage.backgroundColor = "#FEB5B5";
         //start physics system for movements and collisions
         game.physics.startSystem(Phaser.Physics.ARCADE);
         //add hte physics engine to all the game objects
@@ -35,13 +35,34 @@ this.enemies = game.add.group();
 
 // Design the level. x = wall, o = coin, ! = lava.
 var level = [
-'xxxxxxxxxxxxxxxxxxxxxxxx',
-'!            !         x',
-'!                   o  x',
-'!            o         x',
-'!                      x',
-'!        o !           x',
-'xxxxxxxxxxxxxxxxxx!!!!!x',
+'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x',
+'x                                                                                                               x', 'x                                                                                                               x', 
+'x                                                                                                               x', 'x                                                                                                               x', 'x                                                                                                               x', 
+'x                                                                                                               x', 'x                                                                                                               x', 
+'xxxxxxxxxxxxxxxxxxx!!!!!xxxx!!!!!xxxxxxxxxxxxx!!!!!!!!xxxxxxxxxxxxxxxxxx!!!!!!!!!!!!!!!!!!!!!!xxxxxxxxxxxxxxxxxxx',
+'x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x',
+'x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x',
+'x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x',
+'x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x','x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x','x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x',
+'x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x','x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x','x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x','x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x','x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x',   
 ];
 
 // Create the level by going through the array
@@ -99,6 +120,6 @@ this.enemies.add(enemy);
     }
 };
 
-var game = new Phaser.Game(500,200);
+var game = new Phaser.Game(1500,1000);
 game.state.add('main', mainState);
 game.state.start('main');
