@@ -111,7 +111,7 @@ this.enemies.add(enemy);
         }
         
         if(this.cursor.up.isDown && this.player.body.touching.down){
-            this.player.body.velocity.y = -250;
+            this.player.body.velocity.y = -300;
         }
     },
     
