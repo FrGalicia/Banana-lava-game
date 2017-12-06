@@ -2,7 +2,7 @@ var mainState = {
     preload: function(){
         game.load.image('player','assets/Nugget Soldier 2.png');
 		game.load.image('player','assets/Nugget Soldier 2.0.png');
-        game.load.image('wall','assets/Wall.png');
+        game.load.image('floor','assets/floor.jpg');
         game.load.image('coin','assets/coin.png');
         game.load.image('enemy','assets/lava.png');
         
@@ -12,7 +12,7 @@ var mainState = {
         
         game.world.setBounds(0,0,50000,10000);
         //change the game's background color 
-        game.stage.backgroundColor = "#CB4335";
+        game.stage.backgroundImage = "volcan.png";
         //start physics system for movements and collisions
         game.physics.startSystem(Phaser.Physics.ARCADE);
         //add hte physics engine to all the game objects
@@ -25,7 +25,7 @@ var mainState = {
         
         this.player.body.gravity.y = 600;
         
-        this.walls = game.add.group();
+        this.floor = game.add.group();
         this.coins = game.add.group();
         this.enemies = game.add.group();
         
@@ -57,15 +57,15 @@ var level = [
 'x                                                                                                                                                                                                                 x',
 'x                                                                                                                                                                                                                 x',
 'x                                                                                                                                                                                                                 x',
-'x                                                                                                                                                                                                                 x',
-'x                                                                                                                                                                                                                 x',
-'x                                                                                                                                                                                                                 x',
-'x                                                                                                                                                                                                                 x', 
-'x         o                                                                                                                                                                                                       x', 
-'x                                                                                                               x', 'x                                                                                ooo                            x', 
-'x         !                        !   o   !                                  xxxxxxxxx                         x', 'x                       ooo                                                                                     x', 
-'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-'x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x',
+'x                                                                                                                                                                                 o           xx!!!!!!!x          x',
+'x                                                                                                                                                 o         xx!!!!!!!!!!xx                                        x',
+'x                                                                                     oo               xx!!!!!!!!!!x!!!!!!!!!!!x!!!!!!!!!!xx                                                                                                 x',
+'x            o                                                               x!!!!!!!!!!!!!!!!!xxxxx                                                                                                                                   x', 
+'x         o                                                                 xx!!!!!!!!!!!!!!!!!xx                                                                                                                                      x', 
+'x        x!!!!!!!!x                                  o                     xxx!!!!!!!!!!!!!!!!!xxx                                                                                              ooo                                    x', 
+'x       xx!!!!!!!!xx               !   o   !        !!!                   xxxx!!!!!!!!!!!!!!!!!xxxx                       ooo                                                                                                          x', 
+'xxxxxxxxxx!!!!!!!!xxxxxxxxxxxxxxxx!!!xxxxx!!!x!!!!!!!!!!!!!!!xxxxxxxxxxxxxxxxx!!!!!!!!!!!!!!!!!xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx!!!!!!!!!xxxxxxx!!!!!!!!xxx!!!!!!!!!x!!!!!!!!!!!!!!!xxxxxxxxxxxxxxxxxxx',
+'x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x',
 'x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x',
 'x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x',
 'x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x',
