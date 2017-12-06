@@ -1,18 +1,17 @@
 var mainState = {
-    preload: function(){
-        game.load.image('player','assets/Nugget Soldier 2.png');
-		game.load.image('player','assets/Nugget Soldier 2.0.png');
-        game.load.image('floor','assets/floor.jpg');
-        game.load.image('coin','assets/coin.png');
-        game.load.image('enemy','assets/lava.png');
+    preload: function () {
+		game.load.image('player', 'assets/Nugget Soldier 2.0.png');
+        game.load.image('wall', 'assets/floor.jpg');
+        game.load.image('coin', 'assets/coin.png');
+        game.load.image('enemy', 'assets/lava.png');
         
     },
     
     create: function(){
         
-        game.world.setBounds(0,0,50000,10000);
+        game.world.setBounds(0, 0, 50000, 10000);
         //change the game's background color 
-        game.stage.backgroundImage = "volcan.png";
+        game.stage.backgroundImage = "assets/volcan.png";
         //start physics system for movements and collisions
         game.physics.startSystem(Phaser.Physics.ARCADE);
         //add hte physics engine to all the game objects
@@ -21,7 +20,7 @@ var mainState = {
         this.cursor = game.input.keyboard.createCursorKeys();
         
         //creates player in the center of the game 
-        this.player = game.add.sprite(70,100, 'player');
+        this.player = game.add.sprite(70, 100, 'player');
         
         this.player.body.gravity.y = 600;
         
@@ -34,9 +33,9 @@ var mainState = {
 //Game settings/player setup
 
 // Create 3 groups that will contain our objects
-this.walls = game.add.group();
-this.coins = game.add.group();
-this.enemies = game.add.group();
+		this.walls = game.add.group();
+		this.coins = game.add.group();
+		this.enemies = game.add.group();
 
 // Design the level. x = wall, o = coin, ! = lava.
 var level = [
@@ -63,7 +62,7 @@ var level = [
 'x            o                                                               x!!!!!!!!!!!!!!!!!xxxxx                                                                                                                                   x', 
 'x         o                                                                 xx!!!!!!!!!!!!!!!!!xx                                                                                                                                      x', 
 'x        x!!!!!!!!x                                  o                     xxx!!!!!!!!!!!!!!!!!xxx                                                                                              ooo                                    x', 
-'x       xx!!!!!!!!xx               !   o   !        !!!                   xxxx!!!!!!!!!!!!!!!!!xxxx                       ooo                                                                                                          x', 
+'x       xx!!!!!!!!xx               !   o   !        !!!                   xxxx!!!!!!!!!!!!!!!!!xxxx                       ooo                                                                                                          x',
 'xxxxxxxxxx!!!!!!!!xxxxxxxxxxxxxxxx!!!xxxxx!!!x!!!!!!!!!!!!!!!xxxxxxxxxxxxxxxxx!!!!!!!!!!!!!!!!!xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx!!!!!!!!!xxxxxxx!!!!!!!!xxx!!!!!!!!!x!!!!!!!!!!!!!!!xxxxxxxxxxxxxxxxxxx',
 'x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x',
 'x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x',
@@ -141,6 +140,6 @@ this.enemies.add(enemy);
     }
 };
 
-var game = new Phaser.Game(4320,900);
+var game = new Phaser.Game(1000,900);
 game.state.add('main', mainState);
 game.state.start('main');
