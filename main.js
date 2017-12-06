@@ -4,14 +4,13 @@ var mainState = {
         game.load.image('wall', 'assets/floor.jpg');
         game.load.image('coin', 'assets/coin.png');
         game.load.image('enemy', 'assets/lava.png');
-        
     },
     
     create: function(){
         
         game.world.setBounds(0, 0, 50000, 10000);
         //change the game's background color 
-        game.stage.backgroundImage = "assets/volcan.png";
+        game.stage.backgroundImage = "GitHub/Banana-lava-game/assets/volcan.png";
         //start physics system for movements and collisions
         game.physics.startSystem(Phaser.Physics.ARCADE);
         //add hte physics engine to all the game objects
@@ -140,6 +139,6 @@ this.enemies.add(enemy);
     }
 };
 
-var game = new Phaser.Game(1000,900);
+var game = new Phaser.Game(1500,900);
 game.state.add('main', mainState);
 game.state.start('main');
